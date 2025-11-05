@@ -2,7 +2,7 @@ let racers = [];
 let finish = 700;
 let gameOver = false;
 let winner;
-let boostGuy;
+let boostedRacer;
 let boostTime = 0;
 let randomBoost;
 let img;
@@ -48,12 +48,12 @@ if (!gameOver) r.move();
 
 
 if (!gameOver && boostTime <= 0 && random() < 0.02) {
-boostGuy = random(racers);
+boostedRacer = random(racers);
 boostTime = 30;
 }
 
-if (boostTime > 0 && boostGuy) {
-boostGuy.x += random(4, 9);
+if (boostTime > 0 && boostedRacer) {
+boostedRacer.x += random(4, 9);
 boostTime--;
 }
 
@@ -74,7 +74,7 @@ function startRace() {
 racers = [];
 gameOver = false;
 winner = null;
-boostGuy = null;
+boostedRacer = null;
 boostTime = 0;
 
 let shapes = ["circle", "square", "triangle", "pentagon"];
